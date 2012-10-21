@@ -403,8 +403,7 @@ static NSInteger CopyLastIndex = 1;
 
 - (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation
 {
-    // not really used
-    return UIPageViewControllerSpineLocationMid;
+    return UIPageViewControllerSpineLocationMin;
 }
 
 #pragma mark -
