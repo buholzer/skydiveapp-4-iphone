@@ -41,6 +41,7 @@
 "MoreButton" = "More";
 "SignButton" = "Sign";
 "CopyLastButton" = "Copy Last";
+"SyncDropbox" = "Sync with Dropbox";
 "LoadMore" = "Load More...";
 "LogEntryDeleteConfirmation" = "Are you sure you want to delete this entry?";
 "LogEntryPhotoDeleteConfirmation" = "Are you sure you want to delete this photo?";

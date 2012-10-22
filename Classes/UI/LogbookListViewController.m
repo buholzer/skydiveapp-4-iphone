@@ -12,12 +12,16 @@
 #import "SelectLogEntriesViewController.h"
 #import "LogEntry.h"
 #import "UIUtility.h"
+#import "DropboxSyncTask.h"
+
+#import <DropBoxSDK/DropBoxSDK.h>
 
 // constants
 static NSInteger MaxRows = 500;
 static NSInteger LoadMoreCellHeight = 54;
 static NSInteger SignIndex = 0;
 static NSInteger CopyLastIndex = 1;
+static NSInteger SyncDropboxIndex = 2;
 
 // private interface
 @interface LogbookListViewController(Private)
@@ -116,6 +120,20 @@ static NSInteger CopyLastIndex = 1;
 	[self showLogEntryViewController:logEntry isNew:YES];
 }
 
+- (void)syncDropbox {
+    if (![[DBSession sharedSession] isLinked]) {
+		[[DBSession sharedSession] linkFromController:self];
+        NSLog(@"Linking to Dropbox folder");
+    } else {
+        NSLog(@"Synchronizing with Dropbox");
+        
+        DropboxSyncTask *syncTask = [DropboxSyncTask instance];
+        [syncTask sync];
+        
+    }
+}
+
+
 - (void)showMoreActions
 {
 	UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
@@ -124,6 +142,7 @@ static NSInteger CopyLastIndex = 1;
 										 destructiveButtonTitle:nil
 											  otherButtonTitles:NSLocalizedString(@"SignButton", @""),
 																NSLocalizedString(@"CopyLastButton", @""),
+                                                                NSLocalizedString(@"SyncDropbox", @""),
 																nil];
 	sheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [sheet showInView:self.parentViewController.tabBarController.view];
@@ -176,6 +195,7 @@ static NSInteger CopyLastIndex = 1;
     
 	// show page controller
     [self.navigationController pushViewController:currentPageController animated:YES];
+//    [self.navigationController pushViewController:currentLogEntryController animated:YES];
 }
 
 - (void)logEntryDone
@@ -293,8 +313,15 @@ static NSInteger CopyLastIndex = 1;
 
 - (UIPageViewController *)createPageViewController
 {
+    NSDictionary *options =
+    [NSDictionary dictionaryWithObject:
+     [NSNumber numberWithInteger:UIPageViewControllerSpineLocationMin]
+                                forKey: UIPageViewControllerOptionSpineLocationKey];
+    
     // create/init current page controller
-    UIPageViewController *controller = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    UIPageViewController *controller = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl
+                                                                       navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                                                                     options:options];
     controller.hidesBottomBarWhenPushed = YES;
     controller.dataSource = self;
     controller.delegate = self;
@@ -343,6 +370,8 @@ static NSInteger CopyLastIndex = 1;
 		[self signLogbook];
 	else if (buttonIndex == CopyLastIndex)
 		[self copyLast];
+    else if (buttonIndex == SyncDropboxIndex)
+        [self syncDropbox];
 }
 
 #pragma mark -
@@ -404,7 +433,7 @@ static NSInteger CopyLastIndex = 1;
 - (UIPageViewControllerSpineLocation)pageViewController:(UIPageViewController *)pageViewController spineLocationForInterfaceOrientation:(UIInterfaceOrientation)orientation
 {
     // not really used
-    return UIPageViewControllerSpineLocationMid;
+    return UIPageViewControllerSpineLocationMin;
 }
 
 #pragma mark -

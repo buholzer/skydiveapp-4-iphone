@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* SkydiveAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* SkydiveAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		7E43ACEB1629CFD800E9B6B0 /* FlySightLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43ACEA1629CFD800E9B6B0 /* FlySightLog.m */; };
+		7E43ACEF1629F61700E9B6B0 /* NSString_CsvParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E43ACEE1629F61700E9B6B0 /* NSString_CsvParser.m */; };
+		7EA223F81629193700D1296F /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA223F71629193700D1296F /* DropboxSDK.framework */; };
+		7EA223FB1629198A00D1296F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA223FA1629198A00D1296F /* QuartzCore.framework */; };
+		7EA224021629401000D1296F /* DropboxSyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EA224011629401000D1296F /* DropboxSyncTask.m */; };
 		B000FFCB124DB1C900506000 /* StartupTask.m in Sources */ = {isa = PBXBuildFile; fileRef = B000FFCA124DB1C900506000 /* StartupTask.m */; };
 		B00B543211F3485200EB72D6 /* SummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A2D7B41147210900200701 /* SummaryViewController.xib */; };
 		B00B543411F3486C00EB72D6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A2D79A1147210900200701 /* MainWindow.xib */; };
@@ -132,7 +137,6 @@
 		B0FE7E731161697D00300910 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FE7E721161697D00300910 /* Calculator.m */; };
 		E211D9F31512323700C01E64 /* FileDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E211D9F21512323700C01E64 /* FileDownloader.m */; };
 		E21E19F114DD84D900F24C75 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = E21E19F014DD84D900F24C75 /* Default-Portrait~ipad.png */; };
-		E224453E150275F70053FD0C /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E224453D150275F70053FD0C /* DropboxSDK.framework */; };
 		E22CF3F515161E3A00531B63 /* ImageImportInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E22CF3F415161E3A00531B63 /* ImageImportInfo.m */; };
 		E242D6B8142ED7890021EFB6 /* NSData_MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = E242D6B7142ED7890021EFB6 /* NSData_MD5.m */; };
 		E26353A914DD8B0000C5C7BE /* SkydiveType.m in Sources */ = {isa = PBXBuildFile; fileRef = E26353A814DD8B0000C5C7BE /* SkydiveType.m */; };
@@ -190,6 +194,14 @@
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* skydiveapp_4_iphone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skydiveapp_4_iphone_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7E43ACE91629CFD800E9B6B0 /* FlySightLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlySightLog.h; path = ../Data/FlySightLog.h; sourceTree = "<group>"; };
+		7E43ACEA1629CFD800E9B6B0 /* FlySightLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlySightLog.m; path = ../Data/FlySightLog.m; sourceTree = "<group>"; };
+		7E43ACED1629F61700E9B6B0 /* NSString_CsvParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_CsvParser.h; sourceTree = "<group>"; };
+		7E43ACEE1629F61700E9B6B0 /* NSString_CsvParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_CsvParser.m; sourceTree = "<group>"; };
+		7EA223F71629193700D1296F /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		7EA223FA1629198A00D1296F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7EA224001629401000D1296F /* DropboxSyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxSyncTask.h; sourceTree = "<group>"; };
+		7EA224011629401000D1296F /* DropboxSyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxSyncTask.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* skydiveapp_4_iphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "skydiveapp_4_iphone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B000FFC9124DB1C900506000 /* StartupTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupTask.h; sourceTree = "<group>"; };
 		B000FFCA124DB1C900506000 /* StartupTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupTask.m; sourceTree = "<group>"; };
@@ -392,7 +404,6 @@
 		E211D9F11512323700C01E64 /* FileDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileDownloader.h; sourceTree = "<group>"; };
 		E211D9F21512323700C01E64 /* FileDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileDownloader.m; sourceTree = "<group>"; };
 		E21E19F014DD84D900F24C75 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		E224453D150275F70053FD0C /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		E22CF3F315161E3A00531B63 /* ImageImportInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageImportInfo.h; sourceTree = "<group>"; };
 		E22CF3F415161E3A00531B63 /* ImageImportInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageImportInfo.m; sourceTree = "<group>"; };
 		E242D6B6142ED7890021EFB6 /* NSData_MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSData_MD5.h; sourceTree = "<group>"; };
@@ -486,6 +497,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA223FB1629198A00D1296F /* QuartzCore.framework in Frameworks */,
 				B0922B4013870CD300A7F582 /* Security.framework in Frameworks */,
 				B080777D122EDBAB00B69935 /* libxml2.dylib in Frameworks */,
 				B08A8D3A12B028B5007116FD /* Foundation.framework in Frameworks */,
@@ -493,7 +505,7 @@
 				B08A8D3C12B028C3007116FD /* CoreGraphics.framework in Frameworks */,
 				B08A8D3D12B028C9007116FD /* CoreData.framework in Frameworks */,
 				B08A8D3E12B028CF007116FD /* MessageUI.framework in Frameworks */,
-				E224453E150275F70053FD0C /* DropboxSDK.framework in Frameworks */,
+				7EA223F81629193700D1296F /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,8 +576,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EA223FA1629198A00D1296F /* QuartzCore.framework */,
+				7EA223F71629193700D1296F /* DropboxSDK.framework */,
 				B0922B3F13870CD300A7F582 /* Security.framework */,
-				E224453D150275F70053FD0C /* DropboxSDK.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765070DF74369002DB57D /* CoreGraphics.framework */,
@@ -610,6 +623,8 @@
 				E242D6B7142ED7890021EFB6 /* NSData_MD5.m */,
 				B072C6C61153EE8600845230 /* XmlSerializer.h */,
 				B072C6C71153EE8600845230 /* XmlSerializer.m */,
+				7E43ACED1629F61700E9B6B0 /* NSString_CsvParser.h */,
+				7E43ACEE1629F61700E9B6B0 /* NSString_CsvParser.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -646,6 +661,10 @@
 				B0F9396A1190C37A00E2215E /* ImportTask.m */,
 				B000FFC9124DB1C900506000 /* StartupTask.h */,
 				B000FFCA124DB1C900506000 /* StartupTask.m */,
+				7EA224001629401000D1296F /* DropboxSyncTask.h */,
+				7EA224011629401000D1296F /* DropboxSyncTask.m */,
+				7E43ACE91629CFD800E9B6B0 /* FlySightLog.h */,
+				7E43ACEA1629CFD800E9B6B0 /* FlySightLog.m */,
 			);
 			path = Tasks;
 			sourceTree = "<group>";
@@ -1258,6 +1277,9 @@
 				E29484051521712F0037F08F /* uncompr.c in Sources */,
 				E29484061521712F0037F08F /* zutil.c in Sources */,
 				E2AD8F821597E73100ED44EB /* LogEntrySearchCriteria.m in Sources */,
+				7EA224021629401000D1296F /* DropboxSyncTask.m in Sources */,
+				7E43ACEB1629CFD800E9B6B0 /* FlySightLog.m in Sources */,
+				7E43ACEF1629F61700E9B6B0 /* NSString_CsvParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
