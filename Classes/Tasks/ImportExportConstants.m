@@ -8,7 +8,8 @@
 
 #import "ImportExportConstants.h"
 
-NSString * const DropBoxFolderName = @"/skydiving_logbook";
+//NSString * const DropBoxFolderName = @"/skydiving_logbook";
+NSString * const DropBoxFolderName = @"/"; // we are already in the app folder 
 NSString * const XmlFileName = @"skydiving_logbook.xml";
 NSString * const CsvFileName = @"skydiving_logbook.csv";
 NSString * const ZipFileName = @"skydiving_logbook.zip";
